@@ -19,6 +19,7 @@ $router->get('/logout', ['App\Controllers\AuthController', 'logout']);
 $router->get('/admin/dashboard', ['App\Controllers\AdminController', 'dashboard']);
 $router->get('/admin/basvuru', ['App\Controllers\AdminController', 'showBasvuru']);
 $router->post('/admin/basvuru/guncelle', ['App\Controllers\AdminController', 'updateBasvuruStatus']);
+$router->post('/admin/basvuru/sil', ['App\Controllers\AdminController', 'deleteBasvuru']);
 
 
 // // Geçici Admin Dashboard Rotası

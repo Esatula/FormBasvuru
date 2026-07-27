@@ -31,7 +31,7 @@ Yönetici tarafında ise gelişmiş bir **Dashboard (Yönetim Paneli)** yer alı
 - **Canlı İstatistik Kartları:** Toplam başvuru, Bekleyenler, Onaylananlar ve Reddedilenler sayılarını anlık gösteren gösterge paneli.
 - **Gelişmiş Arama & Filtreleme:** Aday ismi, e-posta adresi veya başvuru durumuna göre saniyeler içinde arama yapma.
 - **Detaylı Aday Sayfası:** Adayın tüm iletişim bilgileri, ön yazısı ve yüklediği PDF belgesinin tarayıcıda önizlenmesi/indirilmesi.
-- **Hızlı Durum Güncelleme:** Başvuruyu tek tıkla onaylama veya reddetme imkanı.
+- **Hızlı Durum Güncelleme & Silme:** Başvuruyu tek tıkla onaylama, reddetme veya sistemden kalıcı olarak dosyasıyla birlikte silme imkanı.
 
 ---
 
@@ -52,7 +52,7 @@ Yönetici tarafında ise gelişmiş bir **Dashboard (Yönetim Paneli)** yer alı
    - Üstteki özet kartlardan başvuru durum istatistiklerini takip edebilirsiniz.
    - Arama kutusuna ad veya e-posta girerek spesifik bir adayı bulabilirsiniz.
    - Durum filtresinden sadece *Bekleyen*, *Onaylanan* veya *Reddedilen* başvuruları listeleyebilirsiniz.
-   - **"İncele"** butonuna tıklayarak adayın başvuru detay sayfasına gidebilir, yüklenen PDF belgesini inceleyebilir ve **"Onayla"** / **"Reddet"** butonları ile durumu güncelleyebilirsiniz.
+   - **"İncele"** butonuna tıklayarak adayın başvuru detay sayfasına gidebilir, yüklenen PDF belgesini inceleyebilir, **"Onayla"** / **"Reddet"** butonları ile durumu güncelleyebilir veya onay kutusu ile **"Başvuruyu Sil"** butonuna basarak kalıcı olarak silebilirsiniz.
 
 ---
 

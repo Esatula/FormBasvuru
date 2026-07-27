@@ -98,22 +98,28 @@
         <hr class="my-4">
         <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
             <div>
-                <h5 class="fw-bold mb-1"><i class="bi bi-sliders me-1"></i> Durum Güncelleme</h5>
-                <p class="text-muted small mb-0">Başvuru durumunu Onayla veya Reddet olarak değiştirin.</p>
+                <h5 class="fw-bold mb-1"><i class="bi bi-sliders me-1"></i> Başvuru İşlemleri</h5>
+                <p class="text-muted small mb-0">Başvuruyu onaylayabilir, reddedebilir veya sistemden kalıcı olarak silebilirsiniz.</p>
             </div>
-            <div class="d-flex gap-2">
+            <div class="d-flex flex-wrap gap-2">
                 <form action="<?= url('/admin/basvuru/guncelle') ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $basvuru['id'] ?>">
                     <input type="hidden" name="durum" value="Onaylandı">
                     <button type="submit" class="btn btn-success rounded-pill px-4" <?= $durum === 'Onaylandı' ? 'disabled' : '' ?>>
-                        <i class="bi bi-check-lg me-1"></i> Başvuruyu Onayla
+                        <i class="bi bi-check-lg me-1"></i> Onayla
                     </button>
                 </form>
                 <form action="<?= url('/admin/basvuru/guncelle') ?>" method="POST">
                     <input type="hidden" name="id" value="<?= $basvuru['id'] ?>">
                     <input type="hidden" name="durum" value="Reddedildi">
-                    <button type="submit" class="btn btn-danger rounded-pill px-4" <?= $durum === 'Reddedildi' ? 'disabled' : '' ?>>
-                        <i class="bi bi-x-lg me-1"></i> Başvuruyu Reddet
+                    <button type="submit" class="btn btn-warning text-dark rounded-pill px-4" <?= $durum === 'Reddedildi' ? 'disabled' : '' ?>>
+                        <i class="bi bi-x-lg me-1"></i> Reddet
+                    </button>
+                </form>
+                <form action="<?= url('/admin/basvuru/sil') ?>" method="POST" onsubmit="return confirm('Bu başvuruyu kalıcı olarak silmek istediğinizden emin misiniz? Bu işlem geri alınamaz!');">
+                    <input type="hidden" name="id" value="<?= $basvuru['id'] ?>">
+                    <button type="submit" class="btn btn-outline-danger rounded-pill px-3">
+                        <i class="bi bi-trash-fill me-1"></i> Başvuruyu Sil
                     </button>
                 </form>
             </div>

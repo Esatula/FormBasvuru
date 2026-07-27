@@ -109,4 +109,24 @@ class Basvuru {
             die("Durum Güncelleme Hatası: " . $e->getMessage());
         }
     }
+
+    public function delete($id) {
+        try {
+            // Önce dosyası varsa sunucudan silelim
+            $basvuru = $this->findById($id);
+            if ($basvuru && !empty($basvuru['staj_belgesi_yolu'])) {
+                $filePath = __DIR__ . '/../../' . ltrim($basvuru['staj_belgesi_yolu'], '/');
+                if (file_exists($filePath)) {
+                    @unlink($filePath);
+                }
+            }
+
+            $sql = "DELETE FROM basvurular WHERE id = :id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([':id' => $id]);
+            return true;
+        } catch (\PDOException $e) {
+            die("Silme Hatası: " . $e->getMessage());
+        }
+    }
 }

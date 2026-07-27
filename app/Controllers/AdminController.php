@@ -73,6 +73,23 @@ class AdminController extends BaseController {
 
         // İşlem bittikten sonra kullanıcıyı tekrar aynı başvurunun detay sayfasına yönlendir.
         // Bu sayede yaptığı değişikliği hemen görebilir.
+        $this->setFlash('success', 'Başvuru durumu başarıyla güncellendi.');
         $this->redirect('/admin/basvuru?id=' . $id);
+    }
+
+    public function deleteBasvuru() {
+        $this->checkAuth();
+
+        $id = $_POST['id'] ?? null;
+
+        if (!$id || !is_numeric($id)) {
+            $this->redirect('/admin/dashboard');
+        }
+
+        $basvuruModel = new Basvuru();
+        $basvuruModel->delete($id);
+
+        $this->setFlash('success', 'Başvuru kalıcı olarak silindi.');
+        $this->redirect('/admin/dashboard');
     }
 }
